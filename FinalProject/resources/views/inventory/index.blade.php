@@ -2,8 +2,6 @@
 
 @section('content')
 <div class="container mt-5">
-    <h2 class="mb-5 text-center">Inventory Report</h2>
-
     @foreach ($stocksByCategory as $category => $stocksBySupplyType)
         <div class="card mb-5 shadow-sm">
             <div class="card-header bg-primary text-white">

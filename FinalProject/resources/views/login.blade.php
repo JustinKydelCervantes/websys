@@ -18,6 +18,15 @@
             <!-- Login Form -->
             <div class="col-md-4 col-12 p-4 border rounded shadow-sm bg-white">
                 <h3 class="text-center mb-4">Login</h3>
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul class="mb-0">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <form method="POST" action="{{ route('login') }}">
                     @csrf
                     <div class="mb-3">
@@ -32,6 +41,9 @@
                         <button type="submit" class="btn btn-primary">Login</button>
                     </div>
                 </form>
+                 <div class="text-center mt-3">
+                    <p>Don't have an account? <a href="{{ route('register') }}" class="text-decoration-none">Register here</a></p>
+                </div>
             </div>
         </div>
     </div>

@@ -73,7 +73,16 @@
     <a href="{{ route('items.index') }}" class="{{ request()->is('items*') ? 'active' : '' }}">Items</a>
     <a href="{{ route('issuances.index') }}" class="{{ request()->is('issuances*') ? 'active' : '' }}">Issuances</a>
     <a href="{{ route('inventory.index') }}" class="{{ request()->is('inventory*') ? 'active' : '' }}">Inventory</a>
-    <a href="{{ route('monthly_report.index') }}" class="{{ request()->is('monthly_report*') ? 'active' : '' }}">Monthly Report</a></div>
+    <a href="{{ route('monthly_report.index') }}" class="{{ request()->is('monthly_report*') ? 'active' : '' }}">Monthly Report</a>
+
+    <!-- Logout Link with Confirmation -->
+    <a href="#" onclick="event.preventDefault(); confirmLogout();" class="text-light mt-3">Logout</a>
+
+    <!-- Hidden Form for Logout -->
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+        @csrf
+    </form>
+</div>
 
 <div class="content">
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -86,5 +95,14 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // Confirm logout with a popup
+    function confirmLogout() {
+        if (confirm('Are you sure you want to log out?')) {
+            document.getElementById('logout-form').submit();
+        }
+    }
+</script>
+
 </body>
 </html>

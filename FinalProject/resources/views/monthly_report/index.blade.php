@@ -1,16 +1,17 @@
 @extends('layouts.admin')
 
 @section('content')
-<div class="container-fluid">
-    <h1 class="my-4">Monthly Report</h1>
-
-    <div class="card shadow-sm">
+<div class="container mt-5">
+    <div class="card shadow-sm mt-4">
         <div class="card-header bg-primary text-white">
-            <h5 class="mb-0">Summary Table</h5>
+            <h4 class="mb-0">Summary Table</h4>
         </div>
-        <div class="table-responsive">
-            <table class="table table-striped table-hover mb-0">
-                <thead class="table-dark sticky-top">
+                    <div class="card-body">
+
+        <h5 class="mt-4 mb-3 text-secondary">Monthly Report</h5>
+           <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover table-sm">
+                            <thead class="table-light">
                     <tr>
                         <th>RIST Number</th>
                         <th>Office</th>
